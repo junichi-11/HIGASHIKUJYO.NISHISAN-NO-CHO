@@ -8,12 +8,29 @@
   const progress = document.querySelector('[data-progress]');
   const heroRe = document.querySelector('[data-hero-re]');
   const heroImage = document.querySelector('[data-parallax="image"] img');
+  const introSplash = document.querySelector('[data-intro-splash]');
+  const aerialZoomImages = Array.from(document.querySelectorAll('[data-aerial-zoom] img'));
   const softParallax = Array.from(document.querySelectorAll('[data-parallax="soft"] img'));
   const driftLeft = Array.from(document.querySelectorAll('[data-drift="left"] img'));
   const driftRight = Array.from(document.querySelectorAll('[data-drift="right"] img'));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+
+  if (introSplash) {
+    document.documentElement.classList.add('intro-running');
+    if (reducedMotion) {
+      introSplash.classList.add('is-visible');
+      window.setTimeout(() => {
+        introSplash.classList.add('is-leaving');
+        document.documentElement.classList.remove('intro-running');
+      }, 220);
+    } else {
+      requestAnimationFrame(() => introSplash.classList.add('is-visible'));
+      window.setTimeout(() => introSplash.classList.add('is-leaving'), 2850);
+      window.setTimeout(() => document.documentElement.classList.remove('intro-running'), 4050);
+    }
+  }
 
   const syncScroll = () => {
     const y = window.scrollY || 0;
@@ -39,6 +56,14 @@
       const ratio = clamp((vh - rect.top) / (vh + rect.height), 0, 1) - .5;
       const sign = driftRight.includes(img) ? -1 : 1;
       img.style.setProperty('--drift-x', `${ratio * 22 * sign}px`);
+    });
+    aerialZoomImages.forEach(img => {
+      const figure = img.closest('[data-aerial-zoom]');
+      if (!figure) return;
+      const rect = figure.getBoundingClientRect();
+      const progress = clamp((vh * .92 - rect.top) / (vh * .92 + rect.height * .72), 0, 1);
+      const scale = 1.035 + progress * .69;
+      img.style.setProperty('--aerial-zoom', scale.toFixed(3));
     });
   };
   syncScroll();

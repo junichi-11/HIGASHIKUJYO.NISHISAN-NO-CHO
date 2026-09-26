@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="intro-splash" data-intro-splash aria-hidden="true">
+    <div class="intro-splash-inner">
+      <span class="intro-splash-re">RE:</span>
+      <i class="intro-splash-line"></i>
+    </div>
+  </div>
   <div class="page-progress" aria-hidden="true"><span data-progress></span></div>
 
   <header class="site-header" data-header>
@@ -26,7 +32,7 @@
         <a href="#choice" data-nav-section="choice"><span class="nav-no">02</span><span class="nav-en">CHOICE</span><span class="nav-jp">選択</span></a>
         <a href="#proposal" data-nav-section="proposal"><span class="nav-no">03</span><span class="nav-en">PROPOSAL</span><span class="nav-jp">提案</span></a>
         <a href="#plan" data-nav-section="plan"><span class="nav-no">06</span><span class="nav-en">PLAN</span><span class="nav-jp">プラン</span></a>
-        <a href="#future" data-nav-section="future"><span class="nav-no">09</span><span class="nav-en">FUTURE</span><span class="nav-jp">その先</span></a>
+        <a href="#succession" data-nav-section="succession"><span class="nav-no">09</span><span class="nav-en">SUCCESSION</span><span class="nav-jp">承継</span></a>
       </nav>
     </div>
   </header>
@@ -59,15 +65,15 @@
           <p class="lead">京都駅徒歩圏という希少性。暮らす場所としても、商いの場所としても、日々の選択肢が広がる立地です。</p>
           <p>駅と街の気配をすぐそばに感じながら、住まいと店舗が共存できる場所。土地がすでに持っている力を、これからの使われ方へつないでいきます。</p>
         </div>
-        <figure class="large-image aerial-primary" data-reveal data-parallax="soft">
+        <figure class="large-image aerial-primary" data-reveal data-aerial-zoom>
           <img src="assets/images/aerial-01.jpg" alt="京都駅と計画地付近の航空写真">
           <figcaption>KYOTO STATION / PROJECT AREA</figcaption>
         </figure>
       </div>
 
       <div class="aerial-strip" data-reveal aria-label="京都駅周辺の航空写真">
-        <figure class="aerial-card aerial-wide" data-drift="left"><img src="assets/images/aerial-03.jpg" alt="京都駅周辺の広域航空写真"><figcaption>URBAN CONTEXT</figcaption></figure>
-        <figure class="aerial-card" data-drift="right"><img src="assets/images/aerial-02.jpg" alt="計画地付近の航空写真"><figcaption>NEARBY CONTEXT</figcaption></figure>
+        <figure class="aerial-card aerial-wide" data-aerial-zoom><img src="assets/images/aerial-03.jpg" alt="京都駅周辺の広域航空写真"><figcaption>URBAN CONTEXT</figcaption></figure>
+        <figure class="aerial-card" data-aerial-zoom><img src="assets/images/aerial-02.jpg" alt="計画地付近の航空写真"><figcaption>NEARBY CONTEXT</figcaption></figure>
       </div>
     </section>
 
@@ -168,7 +174,7 @@
             <figcaption><strong>整える。</strong><span>仕事と休息の間に、少しの余白を。</span></figcaption>
           </figure>
           <figure data-reveal>
-            <img src="assets/images/exterior-day.png" alt="1階店舗を含む外観イメージ">
+            <img src="assets/images/shop-detail.jpg" alt="1階店舗部分の拡大イメージ">
             <figcaption><strong>ひらく。</strong><span>1階の店舗が、住まいと街の接点になる。</span></figcaption>
           </figure>
         </div>
@@ -250,26 +256,10 @@
       </div>
     </section>
 
-    <section class="section section-white section-succession">
-      <div class="container">
-        <div class="section-copy narrow" data-reveal>
-          <div class="section-kicker"><span>08</span><span>SUCCESSION</span></div>
-          <h2>その先の承継まで。</h2>
-          <p class="lead">今のためだけではなく、この土地を次の世代へどう渡していくかまで考える。</p>
-          <p>土地を守る。建物を使い続ける。暮らしや店が街に根づく。そして、時間を重ねた先に、次の世代がまた選べる状態を残す。それも、この計画が持つ意味のひとつです。</p>
-        </div>
-        <div class="succession-line" data-reveal>
-          <div><span>NOW</span><strong>整える</strong><p>土地と権利関係を整理し、これからを選べる状態へ。</p></div>
-          <div><span>NEXT</span><strong>使う</strong><p>住まいと店が生まれ、この場所に新しい日常が始まる。</p></div>
-          <div><span>FUTURE</span><strong>残す</strong><p>土地と建物を、次の世代がまた選択できる資産へ。</p></div>
-        </div>
-      </div>
-    </section>
-
     <section class="future section-white" id="future">
       <div class="container">
         <div class="future-heading" data-reveal>
-          <div class="section-kicker"><span>09</span><span>AFTER COMPLETION</span></div>
+          <div class="section-kicker"><span>08</span><span>AFTER COMPLETION</span></div>
           <h2>建てた、その先に。</h2>
           <p>建物が完成することだけが、この計画の景色ではありません。この場所で、新しい暮らしが始まり、店に人が集まり、土地が使われ続けていく。その先の時間まで想像します。</p>
         </div>
@@ -282,6 +272,22 @@
           <article><span>03</span><h3>集う。</h3><p>1階のお店に、人と街の新しい接点が生まれる。</p></article>
           <article><span>04</span><h3>育つ。</h3><p>時間とともに、この場所ならではの風景が育っていく。</p></article>
           <article><span>05</span><h3>つなぐ。</h3><p>今の世代から、その次の世代へ。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white section-succession" id="succession">
+      <div class="container">
+        <div class="section-copy narrow" data-reveal>
+          <div class="section-kicker"><span>09</span><span>SUCCESSION</span></div>
+          <h2>その先の承継まで。</h2>
+          <p class="lead">今のためだけではなく、この土地を次の世代へどう渡していくかまで考える。</p>
+          <p>この計画で大切にしたいのは、今の代だけで完結する価値ではありません。土地を守り、使われ続ける状態をつくり、次の世代がまた自分たちの意思で選べる余地を残す。そこまで含めて、この土地のこれからを考えます。</p>
+        </div>
+        <div class="succession-line" data-reveal>
+          <div><span>NOW</span><strong>整える</strong><p>土地と権利関係を整理し、これからを選べる状態へ。</p></div>
+          <div><span>NEXT</span><strong>守り、使う</strong><p>住まいと店が生まれ、土地を手放さず使い続ける。</p></div>
+          <div><span>FUTURE</span><strong>つなぐ</strong><p>次の世代が、また自分たちの意思で選べる資産へ。</p></div>
         </div>
       </div>
     </section>
